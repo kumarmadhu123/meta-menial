@@ -7,15 +7,14 @@ RDEPENDS_test = "bash"
 
 
 
-SRC_URI = "file://test_curl.sh \
+SRC_URI = "file://test_* \
 "
 #S = "${WORKDIR}"
 
 do_install() {
-install -d ${D}${base_bindir}
-install -m 0755 ${WORKDIR}/test_curl.sh ${D}${base_bindir} 
+install -d ${D}${bindir}/test_fol
+install -m 0755 ${WORKDIR}/test_* ${D}${bindir}/test_fol/ 
 } 
 
 
-FILES_${PN} += "${base_bindir}/test_curl.sh"
-
+FILES_${PN} += "${bindir}/test_fol/test_*"
